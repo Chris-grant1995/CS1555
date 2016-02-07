@@ -11,7 +11,6 @@ CREATE TABLE Messages (
   FOREIGN KEY (convID) REFERENCES Conversation (convID),
   msg_text VARCHAR2(1024),
   spam NUMBER(1)
-
 );
 
 CREATE TABLE Recipients (
@@ -30,7 +29,6 @@ CREATE TABLE Contacts (
   city varchar2(32),
   country varchar2(32),
   PRIMARY KEY (user_ID)
-
 );
 
 CREATE TABLE Conversation (
