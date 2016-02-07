@@ -3,7 +3,7 @@
 --#1
 CREATE TABLE Messages
 (
-  msgID:NUMBER PRIMARY KEY,
+  msgID: NUMBER PRIMARY KEY,
   sender_ID: NUMBER NOT NULL,
   FOREIGN KEY (sender_ID) REFERENCES Contacts(user_ID),
   time_sent: TIMESTAMP NOT NULL ,
@@ -16,7 +16,7 @@ CREATE TABLE Messages
 );
 
 CREATE TABLE Recipients (
-  msgID:NUMBER,
+  msgID: NUMBER,
   user_ID: number,
   PRIMARY KEY (msgID,user_ID),
   FOREIGN KEY (msgID) REFERENCES Messages(msgID),
