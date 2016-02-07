@@ -1,5 +1,5 @@
 --Chris Grant, crg50@pitt.edu
---DROP TABLE * CASCADE CONSTRAINTS;
+DROP TABLE Conversation CASCADE CONSTRAINTS;
 --#1
 CREATE TABLE Messages (
   msgID  NUMBER(10) PRIMARY KEY,
@@ -18,8 +18,8 @@ CREATE TABLE Recipients (
   msgID  NUMBER(10),
   user_ID  number(10),
   PRIMARY KEY (msgID,user_ID),
-  FOREIGN KEY (msgID) REFERENCES Messages(msgID),
-  FOREIGN KEY (user_ID) REFERENCES Contacts(user_ID)
+  FOREIGN KEY (msgID) REFERENCES Messages (msgID),
+  FOREIGN KEY (user_ID) REFERENCES Contacts (user_ID)
 );
 
 CREATE TABLE Contacts (
