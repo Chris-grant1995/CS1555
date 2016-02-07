@@ -1,7 +1,7 @@
 --Chris Grant, crg50@pitt.edu
 --DROP TABLE * CASCADE CONSTRAINTS;
 --#1
-CREATE TABLE Messages(
+CREATE TABLE Messages (
   msgID  NUMBER(10) PRIMARY KEY,
   sender_ID NUMBER(10) NOT NULL,
   FOREIGN KEY (sender_ID) REFERENCES Contacts(user_ID),
@@ -35,6 +35,6 @@ CREATE TABLE Contacts (
 
 CREATE TABLE Conversation (
   convID number(10) NOT NULL,
-  duration number(1024),
+  duration number(10),
   PRIMARY KEY (convID)
 );
