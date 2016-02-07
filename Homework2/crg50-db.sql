@@ -4,11 +4,11 @@
 CREATE TABLE Messages (
   msgID  NUMBER(10) PRIMARY KEY,
   sender_ID NUMBER(10) NOT NULL,
-  FOREIGN KEY (sender_ID) REFERENCES Contacts(user_ID),
+  FOREIGN KEY (sender_ID) REFERENCES Contacts (user_ID),
   time_sent TIMESTAMP NOT NULL ,
   time_read TIMESTAMP,
   convID NUMBER(10) NOT NULL ,
-  FOREIGN KEY (convID) REFERENCES Conversation(convID),
+  FOREIGN KEY (convID) REFERENCES Conversation (convID),
   msg_text VARCHAR2(1024),
   spam NUMBER(1)
 
