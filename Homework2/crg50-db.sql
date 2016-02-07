@@ -48,3 +48,10 @@ ALTER TABLE Recipients ADD  time_read TIMESTAMP;
 ALTER TABLE Conversation DROP COLUMN duration;
 --C
 ALTER TABLE Messages ADD length NUMBER(1) DEFAULT 0;
+--D
+ALTER TABLE Messages ADD CHECK (spam = 0 OR spam = 1);
+--E
+ALTER TABLE Conversation ADD userID NUMBER(10);
+ALTER TABLE Conversation ADD FOREIGN KEY (userID) REFERENCES Contacts(user_ID);
+--F
+ALTER TABLE Messages MODIFY spam DEFAULT 0;
