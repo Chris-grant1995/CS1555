@@ -39,3 +39,12 @@ CREATE TABLE Recipients (
   FOREIGN KEY (msgID) REFERENCES Messages (msgID),
   FOREIGN KEY (user_ID) REFERENCES Contacts (user_ID)
 );
+
+--#2
+--A
+ALTER TABLE Messages DROP COLUMN  time_read;
+ALTER TABLE Recipients ADD  time_read TIMESTAMP;
+--B
+ALTER TABLE Conversation DROP COLUMN duration;
+--C
+ALTER TABLE Messages ADD length NUMBER(1) DEFAULT 0;
