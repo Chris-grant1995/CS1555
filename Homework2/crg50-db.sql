@@ -1,5 +1,5 @@
 --Chris Grant, crg50@pitt.edu
-DROP TABLE * CASCADE CONSTRAINTS;
+--DROP TABLE * CASCADE CONSTRAINTS;
 --#1
 CREATE TABLE Messages
 (
