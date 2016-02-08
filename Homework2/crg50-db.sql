@@ -65,4 +65,4 @@ INSERT INTO Contacts VALUES (
   '412-624-4141',
   'Pittsburgh',
   'US'
-)
+);
