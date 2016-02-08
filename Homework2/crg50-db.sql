@@ -66,3 +66,43 @@ INSERT INTO Contacts VALUES (
   'Pittsburgh',
   'US'
 );
+INSERT INTO Contacts VALUES (
+  2,
+  'Na',
+  'Li',
+  '412-624-8442',
+  'Pittsburgh',
+  'US'
+);
+INSERT INTO Contacts VALUES (
+  3,
+  'Francis',
+  'Lefebvre',
+  '412-624-8443',
+  'Pittsburgh',
+  'US'
+);
+INSERT INTO Contacts VALUES (
+  4,
+  'Amanda',
+  'Carlevaro',
+  '412-624-8444',
+  'Pittsburgh',
+  'US'
+);
+INSERT INTO Contacts VALUES (
+  5,
+  'Ethan',
+  'Lee',
+  '412-624-8445',
+  'Pittsburgh',
+  'US'
+);
+INSERT INTO Contacts VALUES (
+  6,
+  'Zina',
+  'Mkizungo',
+  '412-624-8446',
+  'Pittsburgh',
+  'US'
+);
