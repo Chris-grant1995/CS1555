@@ -106,3 +106,22 @@ INSERT INTO Contacts VALUES (
   'Pittsburgh',
   'US'
 );
+INSERT INTO Conversation VALUES (
+    1,1
+);
+INSERT INTO Conversation VALUES (
+    2,2
+);
+INSERT INTO Conversation VALUES (
+    3,5
+);
+
+INSERT INTO Messages VALUES (
+  1,
+  1,
+  TO_TIMESTAMP('2014-12-24 07:15:57', 'YYYY-MM-DD HH24:MI:SS'),
+  1,
+  'How are you?',
+  0,
+  0
+);
