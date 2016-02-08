@@ -58,12 +58,11 @@ ALTER TABLE Conversation ADD FOREIGN KEY (userID) REFERENCES Contacts(user_ID);
 ALTER TABLE Messages MODIFY spam DEFAULT 0;
 
 --#3
-INSERT INTO Messages VALUES (
+INSERT INTO Contacts VALUES (
   1,
-  1,
-  TO_TIMESTAMP( '2014-12-24 07:15:57', 'YYYY-MM-DD HH24:MI:SS.FF'),
-  1,
-  'How are you?',
-  0,
-  0
-);
+  'Ada',
+  'Lovelace',
+  '412-624-4141',
+  'Pittsburgh',
+  'US'
+)
