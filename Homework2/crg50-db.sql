@@ -125,3 +125,43 @@ INSERT INTO Messages VALUES (
   0,
   0
 );
+INSERT INTO Messages VALUES (
+  2,
+  1,
+  TO_TIMESTAMP('2014-12-24 07:16:14', 'YYYY-MM-DD HH24:MI:SS'),
+  1,
+  'Are you guys ok?',
+  0,
+  0
+);
+INSERT INTO Messages VALUES (
+  3,
+  2,
+  TO_TIMESTAMP('2015-02-24 15:45:12', 'YYYY-MM-DD HH24:MI:SS'),
+  2,
+  'How to solve Problem 1?',
+  0,
+  0
+);
+INSERT INTO Messages VALUES (
+  5,
+  2,
+  TO_TIMESTAMP('2015-02-24 15:57:56', 'YYYY-MM-DD HH24:MI:SS'),
+  2,
+  'Submit your homework on time!',
+  0,
+  0
+);
+INSERT INTO Messages VALUES (
+  6,
+  5,
+  TO_TIMESTAMP('2015-07-24 09:39:18', 'YYYY-MM-DD HH24:MI:SS'),
+  3,
+  'Buy this great car.',
+  1,
+  0
+);
+
+
+
+
