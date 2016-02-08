@@ -21,7 +21,7 @@ CREATE TABLE Conversation (
   PRIMARY KEY (convID)
 );
 CREATE TABLE Messages (
-  msgID  NUMBER(10) PRIMARY KEY,
+  msgID  NUMBER(10),
   sender_ID NUMBER(10) NOT NULL,
   FOREIGN KEY (sender_ID) REFERENCES Contacts (user_ID),
   time_sent TIMESTAMP NOT NULL ,
@@ -29,7 +29,8 @@ CREATE TABLE Messages (
   convID NUMBER(10) NOT NULL ,
   FOREIGN KEY (convID) REFERENCES Conversation (convID),
   msg_text VARCHAR2(1024),
-  spam NUMBER(1)
+  spam NUMBER(1),
+  PRIMARY KEY(msgID)
 );
 
 CREATE TABLE Recipients (
