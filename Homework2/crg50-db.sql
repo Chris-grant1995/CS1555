@@ -60,7 +60,7 @@ ALTER TABLE Messages MODIFY spam DEFAULT 0;
 INSERT INTO Messages VALUES (
   1,
   1,
-  TO_TIMESTAMP(:ts_val, '2014-12-24 07:15:57'),
+  TO_TIMESTAMP( '2014-12-24 07:15:57', 'YYYY-MM-DD HH24:MI:SS.FF'),
   1,
   'How are you?',
   0,
