@@ -55,3 +55,14 @@ ALTER TABLE Conversation ADD userID NUMBER(10);
 ALTER TABLE Conversation ADD FOREIGN KEY (userID) REFERENCES Contacts(user_ID);
 --F
 ALTER TABLE Messages MODIFY spam DEFAULT 0;
+
+--#3
+INSERT INTO Messages VALUES (
+  1,
+  1,
+  TO_TIMESTAMP(:ts_val, '2014-12-24 07:15:57'),
+  1,
+  'How are you?',
+  0,
+  0
+);
