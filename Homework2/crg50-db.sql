@@ -35,8 +35,8 @@ CREATE TABLE Messages (
 
 CREATE TABLE Recipients (
   msgID  NUMBER(10),
-  user_ID  number(10),
-  PRIMARY KEY (msgID,user_ID),
+  user_ID  NUMBER(10),
+  --PRIMARY KEY (msgID,user_ID),
   FOREIGN KEY (msgID) REFERENCES Messages (msgID),
   FOREIGN KEY (user_ID) REFERENCES Contacts (user_ID)
 );
@@ -161,7 +161,6 @@ INSERT INTO Messages VALUES (
   1,
   0
 );
-
 INSERT INTO Recipients VALUES (
   1,
   2,
