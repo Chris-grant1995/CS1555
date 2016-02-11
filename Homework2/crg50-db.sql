@@ -1,5 +1,5 @@
 --Chris Grant, crg50@pitt.edu
-DROP TABLE Conversation CASCADE CONSTRAINTS;
+DROP TABLE Conversations CASCADE CONSTRAINTS;
 DROP TABLE Contacts CASCADE CONSTRAINTS ;
 DROP TABLE Messages CASCADE CONSTRAINTS ;
 DROP TABLE Recipients CASCADE CONSTRAINTS ;
@@ -27,7 +27,7 @@ CREATE TABLE Messages (
   time_sent TIMESTAMP NOT NULL ,
   time_read TIMESTAMP,
   convID NUMBER(10) NOT NULL ,
-  FOREIGN KEY (convID) REFERENCES Conversation (convID),
+  FOREIGN KEY (convID) REFERENCES Conversations (convID),
   msg_text VARCHAR2(1024),
   spam NUMBER(1),
   PRIMARY KEY(msgID)
@@ -46,14 +46,14 @@ CREATE TABLE Recipients (
 ALTER TABLE Messages DROP COLUMN  time_read;
 ALTER TABLE Recipients ADD  time_read TIMESTAMP;
 --B
-ALTER TABLE Conversation DROP COLUMN duration;
+ALTER TABLE Conversations DROP COLUMN duration;
 --C
 ALTER TABLE Messages ADD length NUMBER(1) DEFAULT 0;
 --D
 ALTER TABLE Messages ADD CHECK (spam = 0 OR spam = 1);
 --E
-ALTER TABLE Conversation ADD userID NUMBER(10);
-ALTER TABLE Conversation ADD FOREIGN KEY (userID) REFERENCES Contacts(user_ID);
+ALTER TABLE Conversations ADD userID NUMBER(10);
+ALTER TABLE Conversations ADD FOREIGN KEY (userID) REFERENCES Contacts(user_ID);
 --F
 ALTER TABLE Messages MODIFY spam DEFAULT 0;
 
