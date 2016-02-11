@@ -1,5 +1,11 @@
 --Chris Grant crg50@pitt.edu
 --#4
+
+SELECT * FROM Messages;
+SELECT * FROM Contacts;
+SELECT * FROM Conversations;
+SELECT * FROM Recipients;
+
 --A
 SELECT user_ID
   FROM Contacts

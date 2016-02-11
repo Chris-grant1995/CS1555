@@ -201,5 +201,3 @@ INSERT INTO Recipients VALUES (
   TO_TIMESTAMP('2015-02-24 15:52:39', 'YYYY-MM-DD HH24:MI:SS')
 );
 
-
-SELECT Contacts.user_ID, count(Recipients.user_ID) AS RecievedCount FROM Contacts LEFT OUTER JOIN Recipients ON Contacts.user_ID = Recipients.user_ID GROUP BY Contacts.user_ID;
