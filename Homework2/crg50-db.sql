@@ -144,6 +144,15 @@ INSERT INTO Messages VALUES (
   0
 );
 INSERT INTO Messages VALUES (
+  4,
+  2,
+  TO_TIMESTAMP('2015-02-24 15:51:24', 'YYYY-MM-DD HH24:MI:SS'),
+  2,
+  'I will be out of office tomorrow.',
+  0,
+  0
+);
+INSERT INTO Messages VALUES (
   5,
   2,
   TO_TIMESTAMP('2015-02-24 15:57:56', 'YYYY-MM-DD HH24:MI:SS'),
