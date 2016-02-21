@@ -1,6 +1,7 @@
 --Chris Grant crg50@Pitt.edu
 --Homework 3
-
+DROP VIEW ConversationLog;
+DROP VIEW
 --1A
 SELECT Messages.msgID, msg_text FROM Messages JOIN Recipients ON Messages.msgID = Recipients.msgID
 WHERE ((Messages.spam = 0) AND Recipients.time_read IS NOT NULL )
@@ -27,7 +28,8 @@ CREATE VIEW ConversationLog
     ORDER BY convID ASC ;
 
 --2B
-SELECT Messages.msgID,Contacts.fname,Contacts.lname,recfname,reclname
-FROM (Messages JOIN Contacts ON Messages.sender_ID = Contacts.user_ID) JOIN (SELECT Recipients.msgID as id, Contacts.fname as recfname, Contacts.lname as reclname
+CREATE VIEW MessageLog
+    AS SELECT Messages.msgID,Contacts.fname,Contacts.lname,recfname,reclname
+    FROM (Messages JOIN Contacts ON Messages.sender_ID = Contacts.user_ID) JOIN (SELECT Recipients.msgID as id, Contacts.fname as recfname, Contacts.lname as reclname
                                                                              From Recipients JOIN Contacts ON Recipients.user_ID = Contacts.user_ID) ON Messages.msgID = id
-ORDER BY msgID ASC;
+    ORDER BY msgID ASC;
