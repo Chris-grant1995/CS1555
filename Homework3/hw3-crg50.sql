@@ -1,7 +1,7 @@
 --Chris Grant crg50@Pitt.edu
 --Homework 3
 DROP VIEW ConversationLog;
-DROP VIEW
+DROP VIEW MessageLog;
 --1A
 SELECT Messages.msgID, msg_text FROM Messages JOIN Recipients ON Messages.msgID = Recipients.msgID
 WHERE ((Messages.spam = 0) AND Recipients.time_read IS NOT NULL )
