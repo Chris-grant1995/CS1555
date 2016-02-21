@@ -11,7 +11,7 @@ ORDER BY Messages.msgID ASC ;
 --I have no idea what the hell this is asking
 
 --1C
-
+/*
 SELECT user_ID, count(time_read)
 FROM Recipients JOIN Messages on Recipients.msgID = Messages.msgID
 GROUP BY user_ID; -- Gets user ID and how many messages they have read
@@ -26,5 +26,5 @@ GROUP BY user_ID, EXTRACT(YEAR FROM Recipients.time_read) ;
 SELECT max(NumRead), user_ID, Year
 FROM (SELECT user_ID, count(time_read) as NumRead, EXTRACT(YEAR FROM Recipients.time_read) AS Year FROM Recipients JOIN Messages on Recipients.msgID = Messages.msgID GROUP BY user_ID, EXTRACT(YEAR FROM Recipients.time_read))
 GROUP BY Year, user_ID;
-
-SELECT DISTINCT EXTRACT(YEAR FROM Recipients.time_read), user_ID FROM (SELECT user_ID, count(time_read) as NumRead, EXTRACT(YEAR FROM Recipients.time_read) AS Year FROM Recipients JOIN Messages on Recipients.msgID = Messages.msgID GROUP BY user_ID, EXTRACT(YEAR FROM Recipients.time_read));
+*/
+SELECT DISTINCT Year, user_ID FROM (SELECT user_ID, count(time_read) as NumRead, EXTRACT(YEAR FROM Recipients.time_read) AS Year FROM Recipients JOIN Messages on Recipients.msgID = Messages.msgID GROUP BY user_ID, EXTRACT(YEAR FROM Recipients.time_read));
