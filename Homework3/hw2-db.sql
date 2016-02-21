@@ -77,4 +77,6 @@ INSERT INTO Recipients VALUES(2, 3, TIMESTAMP '2014-12-24 07:20:10');
 INSERT INTO Recipients VALUES(3, 2, TIMESTAMP '2015-02-24 16:00:15');
 INSERT INTO Recipients VALUES(4, 2, TIMESTAMP '2015-02-24 15:52:39');
 
+SELECT user_ID, count(time_read) as NumRead, EXTRACT(YEAR FROM Recipients.time_read) AS Year FROM Recipients JOIN Messages on Recipients.msgID = Messages.msgID GROUP BY user_ID, EXTRACT(YEAR FROM Recipients.time_read) ;
 
+SELECT DISTINCT EXTRACT(YEAR FROM Recipients.time_read), user_ID FROM (SELECT user_ID, count(time_read) as NumRead, EXTRACT(YEAR FROM Recipients.time_read) AS Year FROM Recipients JOIN Messages on Recipients.msgID = Messages.msgID GROUP BY user_ID, EXTRACT(YEAR FROM Recipients.time_read));
