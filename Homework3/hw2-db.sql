@@ -77,3 +77,11 @@ INSERT INTO Recipients VALUES(2, 3, TIMESTAMP '2014-12-24 07:20:10');
 INSERT INTO Recipients VALUES(3, 2, TIMESTAMP '2015-02-24 16:00:15');
 INSERT INTO Recipients VALUES(4, 2, TIMESTAMP '2015-02-24 15:52:39');
 
+Create TABLE RecXCon AS SELECT Recipients.msgID, Contacts.fname, Contacts.lname FROM Recipients JOIN Contacts ON Recipients.user_ID = Contacts.user_ID;
+Create Table MsgXCon AS SELECT Messages.msgID,Contacts.fname, Contacts.lname  FROM Messages JOIN Contacts ON Messages.sender_ID = Contacts.user_ID;
+
+/*SELECT Messages.msgID, Contacts.fname,Contacts.lname, Co.fname, rec.lname
+FROM (Messages JOIN Contacts ON Messages.sender_ID = Contacts.user_ID) JOIN (SELECT * FROM Recipients JOIN Contacts ON Recipients.user_ID = Contacts.user_ID )   ON Messages.msgID = Recipients.msgID
+ORDER BY  msgID AS;C
+*/
+

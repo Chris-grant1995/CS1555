@@ -25,3 +25,9 @@ CREATE VIEW ConversationLog
     AS SELECT convID,msgID
     FROM Messages
     ORDER BY convID ASC ;
+
+--2B
+SELECT Messages.msgID,Contacts.fname,Contacts.lname,recfname,reclname
+FROM (Messages JOIN Contacts ON Messages.sender_ID = Contacts.user_ID) JOIN (SELECT Recipients.msgID as id, Contacts.fname as recfname, Contacts.lname as reclname
+                                                                             From Recipients JOIN Contacts ON Recipients.user_ID = Contacts.user_ID) ON Messages.msgID = id
+ORDER BY msgID ASC;
