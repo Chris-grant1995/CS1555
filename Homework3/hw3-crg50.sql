@@ -2,6 +2,6 @@
 --Homework 3
 
 --1A
-SELECT * FROM Messages JOIN Recipients ON Messages.msgID = Recipients.msgID
+SELECT Messages.msgID FROM Messages JOIN Recipients ON Messages.msgID = Recipients.msgID
 WHERE ((Messages.spam = 0) AND Recipients.time_read IS NOT NULL )
 ORDER BY Messages.msgID ASC ;
