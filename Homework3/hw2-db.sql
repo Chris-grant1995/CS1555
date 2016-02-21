@@ -78,9 +78,9 @@ INSERT INTO Recipients VALUES(3, 2, TIMESTAMP '2015-02-24 16:00:15');
 INSERT INTO Recipients VALUES(4, 2, TIMESTAMP '2015-02-24 15:52:39');
 
 
-CREATE VIEW MessageLog
-    SELECT Messages.msgID,Contacts.fname,Contacts.lname,recfname,reclname
-    FROM (Messages JOIN Contacts ON Messages.sender_ID = Contacts.user_ID) JOIN (SELECT Recipients.msgID as id, Contacts.fname as recfname, Contacts.lname as reclname
-                                                                             From Recipients JOIN Contacts ON Recipients.user_ID = Contacts.user_ID) ON Messages.msgID = id
-    ORDER BY msgID ASC;
+CREATE VIEW ConversationLog
+    AS SELECT convID,msgID
+    FROM Messages
+    ORDER BY convID ASC ;
+
 

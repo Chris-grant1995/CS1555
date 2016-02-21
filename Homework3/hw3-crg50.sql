@@ -33,3 +33,7 @@ CREATE VIEW MessageLog
     FROM (Messages JOIN Contacts ON Messages.sender_ID = Contacts.user_ID) JOIN (SELECT Recipients.msgID as id, Contacts.fname as recfname, Contacts.lname as reclname
                                                                              From Recipients JOIN Contacts ON Recipients.user_ID = Contacts.user_ID) ON Messages.msgID = id
     ORDER BY msgID ASC;
+
+--3A
+SELECT avg(c)
+FROM (SELECT count(ConversationLog.msgID) AS c, ConversationLog.convID FROM ConversationLog GROUP BY convID);
