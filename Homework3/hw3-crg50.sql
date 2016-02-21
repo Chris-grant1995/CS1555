@@ -2,4 +2,6 @@
 --Homework 3
 
 --1A
-SELECT * FROM Messages WHERE ((Messages.spam = 0) AND Messages.time_read IS NOT NULL ) GROUP BY Messages.msgID;
+SELECT * FROM Messages JOIN Recipients ON Messages.msgID = Recipients.msgID
+WHERE ((Messages.spam = 0) AND Messages.time_read IS NOT NULL )
+GROUP BY Messages.msgID;
