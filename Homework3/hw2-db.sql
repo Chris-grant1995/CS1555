@@ -78,9 +78,3 @@ INSERT INTO Recipients VALUES(3, 2, TIMESTAMP '2015-02-24 16:00:15');
 INSERT INTO Recipients VALUES(4, 2, TIMESTAMP '2015-02-24 15:52:39');
 
 
-CREATE VIEW ConversationLog
-    AS SELECT convID,msgID
-    FROM Messages
-    ORDER BY convID ASC ;
-
-
