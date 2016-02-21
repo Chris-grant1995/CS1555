@@ -27,4 +27,5 @@ SELECT max(NumRead), user_ID, Year
 FROM (SELECT user_ID, count(time_read) as NumRead, EXTRACT(YEAR FROM Recipients.time_read) AS Year FROM Recipients JOIN Messages on Recipients.msgID = Messages.msgID GROUP BY user_ID, EXTRACT(YEAR FROM Recipients.time_read))
 GROUP BY Year, user_ID;
 */
-SELECT DISTINCT Year,user_ID, MAX(NumRead)  FROM (SELECT user_ID, count(time_read) as NumRead, EXTRACT(YEAR FROM Recipients.time_read) AS Year FROM Recipients JOIN Messages on Recipients.msgID = Messages.msgID GROUP BY user_ID, EXTRACT(YEAR FROM Recipients.time_read));
+SELECT DISTINCT Year,user_ID, MAX(NumRead)  FROM (SELECT user_ID, count(time_read) as NumRead, EXTRACT(YEAR FROM Recipients.time_read) AS Year FROM Recipients JOIN Messages on Recipients.msgID = Messages.msgID GROUP BY user_ID, EXTRACT(YEAR FROM Recipients.time_read))
+GROUP BY Year,user_ID;
