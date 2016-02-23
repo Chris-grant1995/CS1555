@@ -37,3 +37,10 @@ CREATE VIEW MessageLog
 --3A
 SELECT avg(c)
 FROM (SELECT count(ConversationLog.msgID) AS c, ConversationLog.convID FROM ConversationLog GROUP BY convID);
+
+--3B
+
+Select MessageLog.msgID,  MessageLog.fname,MessageLog.lname, MessageLog.recfname,MessageLog.reclname
+FROM MessageLog
+HAVING count(MessageLog.msgID) > 1
+GROUP BY MessageLog.msgID, MessageLog.fname,MessageLog.lname, MessageLog.recfname,MessageLog.reclname;
