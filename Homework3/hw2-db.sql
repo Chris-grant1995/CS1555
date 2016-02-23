@@ -77,3 +77,13 @@ INSERT INTO Recipients VALUES(2, 3, TIMESTAMP '2014-12-24 07:20:10');
 INSERT INTO Recipients VALUES(3, 2, TIMESTAMP '2015-02-24 16:00:15');
 INSERT INTO Recipients VALUES(4, 2, TIMESTAMP '2015-02-24 15:52:39');
 
+CREATE VIEW ConversationLog
+    AS SELECT convID,msgID
+    FROM Messages
+    ORDER BY convID ASC ;
+
+CREATE MATERIALIZED VIEW ConversationLog_MV
+AS SELECT * From ConversationLog;
+
+Select count(Select DISTINCT count(ConversationLog.msgID) as cnt, ConversationLog.convID FROM ConversationLog GROUP BY ConversationLog.convID) FROM ConversationLog;
+

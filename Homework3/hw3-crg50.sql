@@ -44,3 +44,16 @@ Select  MessageLog.fname,MessageLog.lname, MessageLog.recfname,MessageLog.reclna
 FROM MessageLog
 HAVING count(MessageLog.msgID) > 1
 GROUP BY  MessageLog.fname,MessageLog.lname, MessageLog.recfname,MessageLog.reclname;
+
+
+--4A
+CREATE MATERIALIZED VIEW ConversationLog_MV
+AS SELECT * From ConversationLog;
+
+--4B Q1
+SELECT MAX(cnt), MIN(cnt), AVG(cnt)
+FROM (Select DISTINCT count(ConversationLog.msgID) as cnt, ConversationLog.convID FROM ConversationLog GROUP BY ConversationLog.convID);
+
+--4B Q2
+SELECT MAX(cnt), MIN(cnt), AVG(cnt)
+FROM (Select DISTINCT count(ConversationLog_MV.msgID) as cnt, ConversationLog_MV.convID FROM ConversationLog_MV GROUP BY ConversationLog_MV.convID);
