@@ -40,7 +40,7 @@ FROM (SELECT count(ConversationLog.msgID) AS c, ConversationLog.convID FROM Conv
 
 --3B
 
-Select MessageLog.msgID,  MessageLog.fname,MessageLog.lname, MessageLog.recfname,MessageLog.reclname
+Select  MessageLog.fname,MessageLog.lname, MessageLog.recfname,MessageLog.reclname
 FROM MessageLog
 HAVING count(MessageLog.msgID) > 1
-GROUP BY MessageLog.msgID, MessageLog.fname,MessageLog.lname, MessageLog.recfname,MessageLog.reclname;
+GROUP BY  MessageLog.fname,MessageLog.lname, MessageLog.recfname,MessageLog.reclname;
