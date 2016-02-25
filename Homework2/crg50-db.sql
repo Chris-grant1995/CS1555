@@ -6,7 +6,7 @@ DROP TABLE Recipients CASCADE CONSTRAINTS ;
 --#1
 
 CREATE TABLE Contacts (
-  user_ID number(10) NOT NULL,
+  user_ID number(10) NOT NULL UNIQUE ,
   fname varchar2(32),
   lname varchar2(32),
   cell varchar2(16),

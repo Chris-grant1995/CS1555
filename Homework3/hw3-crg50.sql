@@ -10,6 +10,12 @@ ORDER BY Messages.msgID ASC ;
 --1B
 --List the time and number of read counts in which the least number of messages were read ordered by increasing time.
 --I have no idea what the hell this is asking
+--I think it is asking to group by timestamp, and count the messages read at a specfic timestamp, however as the timestamps are unqiue for each message I'm not exactly sure
+SELECT Recipients.time_read, count(Recipients.time_read)
+FROM Recipients
+WHERE time_read IS NOT NULL
+GROUP BY Recipients.time_read
+ORDER BY Recipients.time_read ASC;
 
 --1C
 
