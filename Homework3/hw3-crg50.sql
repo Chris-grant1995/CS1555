@@ -65,3 +65,14 @@ FROM (Select DISTINCT count(ConversationLog.msgID) as cnt, ConversationLog.convI
 SELECT MAX(cnt), MIN(cnt), AVG(cnt)
 FROM (Select DISTINCT count(ConversationLog_MV.msgID) as cnt, ConversationLog_MV.convID FROM ConversationLog_MV GROUP BY ConversationLog_MV.convID);
 
+--4C Q1
+SET TIMING ON;
+SELECT MAX(cnt), MIN(cnt), AVG(cnt)
+FROM (Select DISTINCT count(ConversationLog.msgID) as cnt, ConversationLog.convID FROM ConversationLog GROUP BY ConversationLog.convID);
+SET TIMING OFF;
+
+--4C Q2
+SET TIMING ON ;
+SELECT MAX(cnt), MIN(cnt), AVG(cnt)
+FROM (Select DISTINCT count(ConversationLog_MV.msgID) as cnt, ConversationLog_MV.convID FROM ConversationLog_MV GROUP BY ConversationLog_MV.convID);
+SET TIMING OFF ;
