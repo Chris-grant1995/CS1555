@@ -2,6 +2,7 @@
 --Homework 3
 DROP VIEW ConversationLog;
 DROP VIEW MessageLog;
+DROP MATERIALIZED VIEW ConversationLog_MV;
 --1A
 SELECT Messages.msgID, msg_text FROM Messages JOIN Recipients ON Messages.msgID = Recipients.msgID
 WHERE ((Messages.spam = 0) AND Recipients.time_read IS NOT NULL )
@@ -9,13 +10,13 @@ ORDER BY Messages.msgID ASC ;
 
 --1B
 --List the time and number of read counts in which the least number of messages were read ordered by increasing time.
---I have no idea what the hell this is asking
 --I think it is asking to group by timestamp, and count the messages read at a specfic timestamp, however as the timestamps are unqiue for each message I'm not exactly sure
-SELECT Recipients.time_read, count(Recipients.time_read)
+
+SELECT min(c), min(tr)  From (SELECT Recipients.time_read AS tr, count(Recipients.time_read) as c
 FROM Recipients
 WHERE time_read IS NOT NULL
 GROUP BY Recipients.time_read
-ORDER BY Recipients.time_read ASC;
+ORDER BY Recipients.time_read ASC);
 
 --1C
 
@@ -63,3 +64,4 @@ FROM (Select DISTINCT count(ConversationLog.msgID) as cnt, ConversationLog.convI
 --4B Q2
 SELECT MAX(cnt), MIN(cnt), AVG(cnt)
 FROM (Select DISTINCT count(ConversationLog_MV.msgID) as cnt, ConversationLog_MV.convID FROM ConversationLog_MV GROUP BY ConversationLog_MV.convID);
+
