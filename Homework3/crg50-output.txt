@@ -1,0 +1,107 @@
+Chris Grant
+crg50@pitt.edu
+HW3
+SQL> @hw3-crg50
+
+View dropped.
+
+
+View dropped.
+
+
+Materialized view dropped.
+#1
+
+     MSGID                                                                      
+----------                                                                      
+MSG_TEXT                                                                        
+--------------------------------------------------------------------------------
+         1                                                                      
+How are you?                                                                    
+                                                                                
+         1                                                                      
+How are you?                                                                    
+                                                                                
+         2                                                                      
+Are you guys ok?                                                                
+                                                                                
+
+     MSGID                                                                      
+----------                                                                      
+MSG_TEXT                                                                        
+--------------------------------------------------------------------------------
+         2                                                                      
+Are you guys ok?                                                                
+                                                                                
+         3                                                                      
+How to solve Problem 1?                                                         
+                                                                                
+         4                                                                      
+I will be out of office tomorrow.                                               
+                                                                                
+
+6 rows selected.
+
+
+    MIN(C) MIN(TR)                                                              
+---------- ---------                                                            
+         1 24-DEC-14                                                            
+
+
+      YEAR MAX(USER_ID) MAX(NUMREAD)                                            
+---------- ------------ ------------                                            
+      2014            3            2                                            
+      2015            2            2                                            
+
+#2
+View created.
+
+
+View created.
+
+#3
+    AVG(C)                                                                      
+----------                                                                      
+ 62.494898                                                                      
+
+
+FNAME                            LNAME                                          
+-------------------------------- --------------------------------               
+RECFNAME                         RECLNAME                                       
+-------------------------------- --------------------------------               
+Ada                              Lovelace                                       
+Na                               Li                                             
+                                                                                
+Ada                              Lovelace                                       
+Francis                          Lefebvre                                       
+                                                                                
+Na                               Li                                             
+Na                               Li                                             
+                                                                                
+
+#4
+Materialized view created.
+
+
+  MAX(CNT)   MIN(CNT)   AVG(CNT)                                                
+---------- ---------- ----------                                                
+       113          1  62.494898                                                
+
+
+  MAX(CNT)   MIN(CNT)   AVG(CNT)                                                
+---------- ---------- ----------                                                
+       113          1  62.494898                                                
+
+
+  MAX(CNT)   MIN(CNT)   AVG(CNT)                                                
+---------- ---------- ----------                                                
+       113          1  62.494898                                                
+
+Elapsed: 00:00:00.01
+
+  MAX(CNT)   MIN(CNT)   AVG(CNT)                                                
+---------- ---------- ----------                                                
+       113          1  62.494898                                                
+
+Elapsed: 00:00:00.00
+SQL> spool off
